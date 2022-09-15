@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  https://www.springframework.org/schema/context/spring-context.xsd">
+ 
+ <context:annotation-config/>
+
+	<!--property injection using value as element-->
+
+<!--<bean class="com.springcore.ref.B" name="bref">
+		<property name="y" value="988" />
+	</bean>
+	
+	name attribute must match iwth the value of data member to which class dependency to be injected
+	-->
+	<bean class="com.springcore.ref.B" name="ob1">
+		<property name="y" value="988" />
+	</bean>
+	
+	<bean class="com.springcore.ref.B" name="ob">
+		<property name="y" value="998" />
+	</bean>
+
+<!--<bean class="com.springcore.ref.A" name="aref" p:x="58" p:ob-ref="bref">
+
+basically spring container serach for the name of data member bean in xml,if found than inject dep otherwise null
+//in case of type serach on the basis of type of data member in xml
+//constructor also matches based on name,parameter name
+
+
+
+<bean class="com.springcore.ref.A" name="aref" p:x="58" autowire="constructor">
+-->
+	<bean class="com.springcore.ref.A" name="aref" p:x="58"> 
+		
+		<!-- 
+		<property name="x" value="98" />
+		<property name="ob">
+			<ref bean="bref" />
+		</property>
+		
+		<property name="ob" ref="bref"/>
+		-->
+		
+	</bean>
+</beans>

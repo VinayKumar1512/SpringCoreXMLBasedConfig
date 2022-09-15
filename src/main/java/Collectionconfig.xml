@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--property injection using value as element-->
+
+	<bean class="com.springcore.collections.Emp" name="emp1">
+		<property name="name" value="Vinay Kumar" />
+		<property name="phones">
+			<list>
+				<value>32523235332</value>
+				<value>32232753332</value>
+				<value>32523896332</value>
+			</list>
+		</property>
+		<property name="addresses">
+			<set>
+				<value>Delhi</value>
+				<value>Himachal Pradesh</value>
+				<value>USA</value>
+			</set>
+		</property>
+		<property name="courses">
+			<map>
+				<entry key="java" value="2months"></entry>
+				<entry key="python" value="3months"></entry>
+			</map>
+		</property>
+		<property name="props">
+			<props>
+			<prop key="name">vinay kumar</prop>
+			<prop key="address">Hp</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>
